@@ -5,17 +5,18 @@
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel open:app lint:watch test:watch",
-	"open:app" : "babel-node tools/srcServer.js",
-	"lint": "node_modules/.bin/esw webpack.config.* app tools",
-	"lint:watch" : "npm run lint -- --watch",
-	"test": "mocha --reporter progress tools/testSetup.js \"app/**/*.test.js\"",
-	"test:watch": "npm run test -- --watch"
+    "open:app": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* app tools",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tools/testSetup.js \"app/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
+    "colors": "^1.1.2",
     "jquery": "2.2.3",
     "react": "15.0.2",
     "react-dom": "15.0.2",

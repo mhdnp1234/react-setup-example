@@ -5,13 +5,19 @@
     "plugin:import/warnings"
   ],
   "plugins": [
-    "react"
+    "redux-saga",
+    "react",
+    "import",
+    "jsx-a11y"
   ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
+      "modules": true,
+      "classes": true
     }
   },
   "env": {
@@ -19,21 +25,20 @@
     "browser": true,
     "node": true,
     "jquery": true,
-    "mocha": true
+    "jest": true,
+    "amd": true,
+    "commonjs": true,
   },
   "rules": {
-    "quotes": 0,
     "no-console": 1,
     "no-debugger": 1,
     "no-var": 1,
-    "semi": [1, "always"],
     "no-trailing-spaces": 0,
     "eol-last": 0,
     "no-unused-vars": 0,
     "no-underscore-dangle": 0,
     "no-alert": 0,
     "no-lone-blocks": 0,
-    "jsx-quotes": 1,
     "react/display-name": [ 1, {"ignoreTranspilerName": false }],
     "react/forbid-prop-types": [1, {"forbid": ["any"]}],
     "react/jsx-boolean-value": 1,
@@ -64,6 +69,99 @@
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1
-  }
+    "react/wrap-multilines": 1,
+    "comma-dangle": [
+        2,
+        "always-multiline"
+    ],
+    "linebreak-style": 0,
+    "indent": [
+        2,
+        4,
+        {
+            "SwitchCase": 1
+        }
+    ],
+    "block-spacing": [
+        2,
+        "always"
+    ],
+    "brace-style": [
+        2,
+        "stroustrup", {
+            "allowSingleLine": false
+        }
+    ],
+    "keyword-spacing": [
+        "error",
+        {
+            "overrides": {
+                "function": {
+                    "after": false
+                }
+            }
+        }
+    ],
+    "space-before-function-paren": [
+        2,
+        "never"
+    ],
+    "space-before-blocks": [
+        "error",
+        {
+            "functions": "always",
+            "keywords": "always"
+        }
+    ],
+    "space-unary-ops": [
+        "error",
+        {
+            "words": true,
+            "nonwords": false
+        }
+    ],
+    "object-curly-spacing": [
+        "error",
+        "never"
+    ],
+    "camelcase": [
+        2,
+        {
+            "properties": "always"
+        }
+    ],
+    "comma-spacing": [
+        2,
+        {
+            "before": false,
+            "after": true
+        }
+    ],
+    "quotes": [
+        2,
+        "single"
+    ],
+    "jsx-quotes": [
+        1,
+        "prefer-double"
+    ],
+    "semi": [
+        2,
+        "always"
+    ]
+  },
+  "parser": "babel-eslint",
+  "settings": {
+    "import/extensions": [
+        ".js",
+        ".jsx"
+    ],
+    "import/ignore": [
+        "node_modules"
+    ]
+  },
+  "globals": {
+    "process": true,
+    "__dirname": true
+  },
 }

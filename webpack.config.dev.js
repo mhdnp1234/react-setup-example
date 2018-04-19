@@ -1,12 +1,12 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
-export default {
+module.exports = {
   debug: true,
   devtool: 'inline-source-map',
   noInfo: false,
   entry: [
-    'eventsource-polyfill', // necessary for hot reloading with IE
+//    'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
     path.resolve(__dirname, 'app/index')
   ],

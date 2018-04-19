@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "react application boilerplate",
   "scripts": {
-    "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel open:app",
-    "open:app": "babel-node tools/srcServer.js",
+    "open:app": "node server",
     "lint": "node_modules/.bin/esw webpack.config.* app tools",
     "lint:watch": "npm run lint -- --watch",
     "test": "jest --config=jest.config.js",
@@ -17,8 +16,11 @@
     "babel-polyfill": "^6.8.0",
     "bootstrap": "3.3.6",
     "colors": "^1.1.2",
+    "express-busboy": "^6.0.1",
     "immutable": "^3.8.2",
+    "invariant": "^2.2.4",
     "jquery": "2.2.3",
+    "lodash": "^4.17.5",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
@@ -29,7 +31,9 @@
     "redux-form": "^7.3.0",
     "redux-immutable": "^4.0.0",
     "redux-saga": "^0.16.0",
-    "toastr": "2.1.2"
+    "reselect": "^3.0.1",
+    "toastr": "2.1.2",
+    "warning": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
@@ -78,7 +82,7 @@
     "react-addons-test-utils": "15.0.2",
     "redux-immutable-state-invariant": "1.2.3",
     "redux-mock-store": "1.0.2",
-    "rimraf": "2.5.2",
+    "rimraf": "^2.5.2",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.0",

@@ -3,11 +3,12 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Router, browserHistory, applyRouterMiddleware} from 'react-router';
 import {Provider} from 'react-redux';
-import routes from './routes';
+import getAllRoutes from './routes';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import configureStore from './store';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {useScroll} from 'react-router-scroll';
+import App from './App.js';
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router
 // Optionally, this could be changed to leverage a created history
@@ -24,11 +25,16 @@ const history = syncHistoryWithStore(browserHistory, store, {
     selectLocationState: selectLocationState(),
 });
 
+const rootRoute = {
+	component: App,
+	childRoutes: getAllRoutes(store),
+}
+
 render(
 	<Provider  store={store}>
 		<Router
 			history={history}
-			routes={routes}
+			routes={rootRoute}
 			render={
 			// Scroll to top when going to a new page, imitating default browser
 			// behaviour

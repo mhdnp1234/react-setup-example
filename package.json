@@ -30,6 +30,7 @@
     "redux": "^3.5.2",
     "redux-form": "^7.3.0",
     "redux-immutable": "^4.0.0",
+    "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
     "toastr": "2.1.2",
